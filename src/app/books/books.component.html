@@ -1,0 +1,30 @@
+<div class="books-container">
+  <div *ngFor="let book of books?.items">
+    <mat-card class="book-content">
+      <mat-card-title>{{book.volumeInfo.title}}</mat-card-title>
+      <mat-card-content>
+        <div class="row">
+          <div class="col-4">Authors :</div>
+          <div class="col-8">
+            <div *ngFor= "let author of book.volumeInfo.authors">
+              {{author}}
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="book.volumeInfo.publisher">
+          <div class="col-4">Publisher :</div>
+          <div class="col-8">
+              {{book.volumeInfo.publisher}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">Published Date :</div>
+          <div class="col-8">
+            {{book.volumeInfo.publishedDate}}
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
