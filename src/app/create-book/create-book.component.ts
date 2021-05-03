@@ -15,6 +15,7 @@ export class CreateBookComponent implements OnInit {
 
   onSubmit(form) {
     console.log(form.value);
+
   }
 
   onCancel() {
