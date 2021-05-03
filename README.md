@@ -1,3 +1,6 @@
+Topics Covered : - Component, service, interface, module creation . Data binding, Subjects, Routing, Filtering, Angular Material, Bootstrap, Service Integration.
+
+
 # KaplanBook
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
