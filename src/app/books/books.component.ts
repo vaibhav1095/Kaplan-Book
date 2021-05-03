@@ -29,8 +29,6 @@ export class BooksComponent implements OnInit {
     this.filteredBooks = this.filterByTitle(value);
   }
 
-
-
   collectBooks() {
     this.service.getBooks().subscribe(data=> {
       this.books = data.items;
