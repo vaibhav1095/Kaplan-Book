@@ -1,12 +1,30 @@
 <div class="landing-page-container">
   <div class="side-nav-container" [@openClose]="closed ? true : false">
-    <mat-icon class="mat-icon" (click)="onSidenavToggle()">menu</mat-icon>
+    <div class="row">
+      <div class="col-2">
+        <mat-icon class="mat-icon" (click)="onSidenavToggle()">menu</mat-icon>
+      </div>
+      <div class="col-6"><mat-label class="menu" *ngIf="!closed"><a [routerLink]="['/books']" >MENU</a></mat-label></div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-2">
+        <fa-icon [icon]="faArchive"></fa-icon>
+      </div>
+      <div class="col-9"><mat-label class="menu" *ngIf="!closed"><a [routerLink]="['/books']" >CONTENT MANAGEMENT</a></mat-label></div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+        <fa-icon [icon]="faBook"></fa-icon>
+      </div>
+      <div class="col-6"><mat-label class="menu" *ngIf="!closed"><a [routerLink]="['/books']" >COURSES</a></mat-label></div>
+    </div>
   </div>
   <div class="books-container">
     <p>
       <mat-toolbar>
-        <span><h1 style="font-weight: 500; color: navy; font-size: larger;">
-          <a [routerLink]="['/books']"> atom </a>
+        <span><h1 style="font-weight: 500; font-size: larger;">
+          <a [routerLink]="['/books']"><span style="color: navy;">atom</span></a>
         </h1></span>
       </mat-toolbar>
     </p>

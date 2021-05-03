@@ -16,7 +16,7 @@
       <mat-form-field class="matInput">
         <mat-label style="margin-left: 10px;" *ngIf= "!focused">Search</mat-label>
         <span matPrefix><fa-icon [icon]="faSearch" *ngIf= "!focused" ></fa-icon></span>
-          <input matInput class="matinput" size="50" (focus)="onClicked()" (blur)="onBlur()">
+          <input matInput class="matinput" size="50" (focus)="onClicked()" (blur)="onBlur()" [(ngModel)]="searchValue">
       </mat-form-field>
   </div>
 
@@ -28,7 +28,7 @@
 
 
   <div class="books-container">
-    <div *ngFor="let book of books?.items">
+    <div *ngFor="let book of filteredBooks">
       <mat-card class="book-content">
         <mat-card-title>{{book.volumeInfo.title}}</mat-card-title>
         <mat-card-content>

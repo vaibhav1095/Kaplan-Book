@@ -1,8 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, ViewChild } from '@angular/core';
-import { HasElementRef } from '@angular/material/core/common-behaviors/color';
-import { MatSidenav } from '@angular/material/sidenav';
-
+import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { faArchive } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +9,7 @@ import { MatSidenav } from '@angular/material/sidenav';
   animations: [
     trigger('openClose', [
       state('true', style({ width: '56px' })),
-      state('false', style({ width: '240px' })),
+      state('false', style({ width: '300px' })),
       transition('false <=> true', animate(500))
     ])
   ]
@@ -18,8 +17,8 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class AppComponent {
   title = 'kaplan-book';
   closed = false;
-
-  @ViewChild('sidenav') sidenav : MatSidenav;
+  faBook = faBook;
+  faArchive= faArchive;
 
   onSidenavToggle() {
     this.closed = !this.closed;
