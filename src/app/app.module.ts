@@ -7,10 +7,16 @@ import { MaterialModule } from './shared/material.module';
 import { BooksComponent } from './books/books.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { StoreModule } from '@ngrx/store';
+import { CreateBookComponent } from './create-book/create-book.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
-    path: 'books', component: BooksComponent
+    path: 'books', component: BooksComponent, children: [
+      {path: 'createBook', component: CreateBookComponent}
+    ]
   },
   {
     path: '**', redirectTo: 'books'
@@ -20,14 +26,18 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    BooksComponent
+    BooksComponent,
+    CreateBookComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule,
+    StoreModule.forRoot({}, {}),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,5 +9,34 @@
   margin-right: 20px;
   width: 500px;
   min-height: 150px;
-  border-left: 4px solid orangered;
+  border-left: 4px solid orange;
+  color: navy;
+}
+
+.bookStyle {
+  letter-spacing: 1px;
+  font-size: xx-large;
+  font-weight: 700;
+  text-align: center;
+  margin-left: 20px;
+}
+
+.search-book {
+  margin-left: 65px;
+  max-width: 500px;
+}
+
+.matInput {
+  width: 100%;
+}
+
+.allBooks {
+  margin-left: 65px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
+
+.createNew {
+  color: white;
 }
