@@ -8,6 +8,7 @@ import { BooksComponent } from './books.component';
 fdescribe('BooksComponent', () => {
   let component: BooksComponent;
   let fixture: ComponentFixture<BooksComponent>;
+  let service: AppService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -21,6 +22,7 @@ fdescribe('BooksComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BooksComponent);
     component = fixture.componentInstance;
+    service = TestBed.inject(AppService);
     fixture.detectChanges();
   });
 
@@ -47,5 +49,11 @@ fdescribe('BooksComponent', () => {
     spyOn(component, 'collectBooks').and.callThrough();
     component.ngOnInit();
     expect(component.collectBooks).toHaveBeenCalled();
+  });
+
+  it('should service to be called when called collectBooks()', () => {
+    spyOn(service, 'getBooks').and.callThrough();
+    component.collectBooks();
+    expect(service.getBooks).toHaveBeenCalled();
   });
 });
